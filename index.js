@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.post("/chat", async (req, res) => {
   const userMessage = req.body.message;
-  if(!userMessage) return res.json({ reply: "No message received." });
+  if(!userMessage) return res.json({ reply: "⚡ No message received." });
 
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -33,7 +33,7 @@ app.post("/chat", async (req, res) => {
 
   } catch (err) {
     console.error(err);
-    res.json({ reply: "Something went wrong on the backend." });
+    res.json({ reply: "⚡ Something went wrong on the backend." });
   }
 });
 
